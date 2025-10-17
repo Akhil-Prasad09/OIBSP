@@ -1,0 +1,23 @@
+# BMI Calculator Pro - Professional Health Analytics
+# Python requirements file for full functionality
+
+# Core dependencies
+matplotlib>=3.5.0
+numpy>=1.21.0
+seaborn>=0.11.0
+
+# GUI framework (usually comes with Python)
+# tkinter  # Built-in with most Python installations
+
+# Standard library modules used (no installation required):
+# - json (data storage)
+# - datetime (timestamps)
+# - csv (export functionality)
+# - os (file operations)
+# - statistics (calculations)
+# - filedialog, messagebox, scrolledtext (tkinter extensions)
+
+# Development dependencies (optional)
+# pytest>=7.0.0  # For running tests
+# black>=22.0.0   # Code formatting
+# flake8>=4.0.0   # Code linting

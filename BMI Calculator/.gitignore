@@ -1,0 +1,89 @@
+# BMI Calculator Pro - Git Ignore File
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Application specific
+bmi_records.json          # User data files
+*.backup                  # Backup files
+temp/                     # Temporary files
+logs/                     # Log files
+
+# Chart exports (user generated)
+*.png
+*.jpg
+*.jpeg
+*.pdf
+
+# Report exports (user generated)  
+*.txt
+*.csv
+
+# Windows specific
+*.bat.bak
+*.cmd.bak
+
+# Development tools
+.mypy_cache/
+.dmypy.json
+dmypy.json
