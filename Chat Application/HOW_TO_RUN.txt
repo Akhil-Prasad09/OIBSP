@@ -1,0 +1,85 @@
+╔══════════════════════════════════════════════════════════════════╗
+║        HOW TO RUN THE CHAT APPLICATION FROM FILE EXPLORER       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📁 You'll see these files in this folder:
+
+   1_Start_Server.bat  ← Double-click this FIRST
+   2_Start_Client.bat  ← Double-click this to open chat windows
+
+═══════════════════════════════════════════════════════════════════
+
+🚀 QUICK START INSTRUCTIONS:
+
+STEP 1: Start the Server
+   └─→ Double-click: 1_Start_Server.bat
+   └─→ A black console window will appear
+   └─→ Wait until you see "Server listening on 127.0.0.1:5555"
+   └─→ Keep this window open!
+
+STEP 2: Start First Client (User 1)
+   └─→ Double-click: 2_Start_Client.bat
+   └─→ The login window will appear
+   └─→ Click "Sign Up" to create an account (e.g., "Alice")
+   └─→ Login with your credentials
+
+STEP 3: Start Second Client (User 2)
+   └─→ Double-click: 2_Start_Client.bat AGAIN
+   └─→ Yes! You can run it multiple times!
+   └─→ Another login window will appear
+   └─→ Create a different account (e.g., "Bob")
+   └─→ Login with the second account
+
+STEP 4: Chat!
+   └─→ Now you have two chat windows open
+   └─→ Type messages in either window
+   └─→ See them appear in both with smooth animations!
+
+═══════════════════════════════════════════════════════════════════
+
+💡 TIPS:
+
+✓ You can open as many clients as you want
+  → Just keep double-clicking "2_Start_Client.bat"
+
+✓ Each client needs a different username
+  → Alice, Bob, Charlie, etc.
+
+✓ The server must be running first
+  → Keep the "1_Start_Server.bat" window open
+
+✓ To disconnect properly
+  → Click the "Disconnect" button in the chat window
+  → OR just close the window
+
+✓ To stop everything
+  → Close all chat windows first
+  → Then close the server window
+
+═══════════════════════════════════════════════════════════════════
+
+🎨 FEATURES TO TRY:
+
+• Send messages and watch them animate in
+• Click the 😊 emoji button for emojis
+• Click the 📎 attach button for files
+• See online users in the right sidebar
+• Disconnect and reconnect smoothly
+• Open 3, 4, or more clients at once!
+
+═══════════════════════════════════════════════════════════════════
+
+⚠️ TROUBLESHOOTING:
+
+Problem: "python is not recognized"
+Solution: Make sure Python is installed and added to PATH
+
+Problem: Client won't connect
+Solution: Make sure the server is running first
+
+Problem: Port already in use
+Solution: Close any existing server windows and try again
+
+═══════════════════════════════════════════════════════════════════
+
+Enjoy your professional chat application! 💬✨
