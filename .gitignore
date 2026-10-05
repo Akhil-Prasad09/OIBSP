@@ -1,0 +1,5 @@
+
+# Chat Application runtime files
+Chat Application/chat.key
+Chat Application/chat_app.db
+__pycache__/

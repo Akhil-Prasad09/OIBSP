@@ -62,8 +62,7 @@ STEP 4: Chat!
 
 • Send messages and watch them animate in
 • Click the 😊 emoji button for emojis
-• Click the 📎 attach button for files
-• See online users in the right sidebar
+• Click the 📎 attach button (inserts the file name; sending files is not implemented yet)
 • Disconnect and reconnect smoothly
 • Open 3, 4, or more clients at once!
 

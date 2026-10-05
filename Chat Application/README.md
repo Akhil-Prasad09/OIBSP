@@ -1,165 +1,76 @@
-# Advanced Chat Application 💬
+# Chat Application 💬
 
-A professional-level chat application built with Python, featuring a modern PyQt5 GUI with smooth animations and transitions.
+A multi-client chat app in Python: a multithreaded socket server, a PyQt5 desktop client with animations, SQLite message history, and encrypted message storage.
 
-## Features ✨
+## Features
 
-- 🔐 **User Authentication** - Secure registration and login system
-- 💬 **Real-time Messaging** - Instant message delivery using socket programming
-- 🎨 **Modern UI** - Professional interface with smooth animations and transitions
-- 🖼️ **Multimedia Sharing** - Send and receive images and files
-- 😊 **Emoji Support** - Full emoji integration in messages
-- 📜 **Message History** - Persistent chat history stored in database
-- 🔔 **Notifications** - Desktop notifications for new messages
-- 🔒 **End-to-End Encryption** - Secure message transmission with AES encryption
-- 🏠 **Multiple Chat Rooms** - Create and join different chat rooms
-- 👥 **Online Users** - See who's currently online
+- **Accounts:** register and log in; passwords stored as salted scrypt hashes
+- **Real-time group chat:** a multithreaded TCP server broadcasts each message to everyone in the room
+- **Encrypted storage and broadcast:** the server encrypts each message with Fernet (AES-128-CBC + HMAC-SHA256) before saving it and sending it to clients, which decrypt it locally
+- **Message history:** the last 100 messages load when you log in
+- **Emoji:** picker and `:alias:` shortcodes
+- **Desktop notifications** for new messages and users joining (via plyer, where supported)
+- **Multiple clients at once:** open as many windows as you like
 
-## Installation 🚀
+### Security model, precisely
 
-1. Clone the repository or navigate to the project directory
-2. Install dependencies:
+All clients and the server share one key (`chat.key`, created on first run, or the `CHAT_KEY` environment variable). Messages are encrypted at rest in the database and on the way from the server to clients. The server holds the key, so this is **not end-to-end encryption**, and messages travel from client to server unencrypted. The default setup runs everything on `localhost`. To run across machines, put the server behind TLS and copy `chat.key` to each client.
+
+### Not implemented yet
+
+- Sending files and images: the 📎 button only inserts the file name into your message
+- Creating extra rooms: everyone chats in "General" (the database layer already supports rooms)
+- Filling the online-users sidebar from the server
+
+## Install
+
+Python 3.10+.
+
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage 📖
+## Run
 
-### Option 1: Easy Launch (Windows - Recommended)
+**Windows:** double-click `1_Start_Server.bat`, then `2_Start_Client.bat` once per user.
 
-**For Windows users**, simply use the batch files:
-
-1. **Double-click** `1_Start_Server.bat` to start the server
-2. **Double-click** `2_Start_Client.bat` to open a chat window
-3. **Double-click** `2_Start_Client.bat` again for each additional user you want to test
-
-✨ **Multiple instances work!** You can run as many clients as you want simultaneously.
-
-### Option 2: Command Line
-
-**Starting the Server:**
+**Any OS:**
 ```bash
-python server.py
+python server.py     # terminal 1: listens on localhost:5555
+python client.py     # terminal 2, 3, ...: one chat window each
 ```
-The server will start on `localhost:5555` by default.
 
-**Starting the Client(s):**
+Register a user in each window and start chatting.
+
+## Tests
+
 ```bash
-python client.py
+python -m pytest tests -q
 ```
-You can run this command multiple times in different terminals to open multiple chat windows.
 
-The client GUI will launch. You can:
-- Register a new account
-- Login with existing credentials
-- Join chat rooms
-- Send messages, emojis, and multimedia
-- View message history
-- Open multiple chat windows simultaneously
+The tests cover encryption round-trips, password hashing, and a full two-client session against a real server: register, log in, send, receive the encrypted broadcast, decrypt it, and check that the database never stores plaintext.
 
-## Project Structure 📁
+## Project structure
 
 ```
 Chat Application/
-├── server.py              # Main server application
-├── client.py              # Main client application
+├── server.py              # multithreaded socket server
+├── client.py              # PyQt5 client + network thread
 ├── database/
-│   ├── db_handler.py      # Database operations
-│   └── models.py          # Database models
+│   ├── db_handler.py      # SQLite operations
+│   └── models.py          # dataclasses
 ├── gui/
-│   ├── login_window.py    # Login/Register interface
-│   ├── chat_window.py     # Main chat interface
-│   └── styles.py          # UI styles and themes
+│   ├── login_window.py    # login / register
+│   ├── chat_window.py     # chat interface
+│   └── styles.py          # theme
 ├── utils/
-│   ├── encryption.py      # Encryption utilities
-│   ├── notifications.py   # Notification system
-│   └── multimedia.py      # Multimedia handling
-└── requirements.txt       # Project dependencies
+│   ├── encryption.py      # Fernet messages, scrypt passwords, key loading
+│   └── notifications.py   # desktop notifications
+└── tests/test_chat.py
 ```
 
-## Configuration ⚙️
+## Troubleshooting
 
-Default settings:
-- **Host**: localhost
-- **Port**: 5555
-- **Encryption**: AES-256
-- **Database**: SQLite (chat_app.db)
-
-## Recent Updates 🆕
-
-### Version 1.1 - Bug Fixes & Improvements
-
-✅ **Fixed:** Username display issue - usernames now show correctly in messages (no more "Unknown")
-
-✅ **Fixed:** Disconnect freeze issue - disconnecting is now instant and smooth
-
-✅ **Added:** Multiple instance support - run as many chat windows as you need simultaneously
-
-✅ **Added:** Easy-launch batch files for Windows users (`.bat` files)
-
-✅ **Improved:** Network thread management for better performance
-
-## Security 🔒
-
-- Passwords are hashed using SHA-256
-- Messages are encrypted using AES-256 encryption
-- Secure socket communication
-- PBKDF2HMAC key derivation (100,000 iterations)
-
-## Technologies Used 🛠️
-
-- **Python 3.8+**
-- **PyQt5 5.15+** - GUI framework with animations
-- **Socket Programming** - Real-time network communication
-- **SQLite** - Lightweight database
-- **Cryptography 41.0+** - AES-256 encryption
-- **Pillow 10.0+** - Image processing
-- **Emoji 2.0+** - Native emoji support
-- **Plyer 2.0+** - Cross-platform notifications
-
-## Testing Multiple Users 👥
-
-To test the full chat experience with multiple users:
-
-**Windows:**
-1. Start the server: Double-click `1_Start_Server.bat`
-2. Open client 1: Double-click `2_Start_Client.bat` → Register as "Alice"
-3. Open client 2: Double-click `2_Start_Client.bat` → Register as "Bob"
-4. Open client 3: Double-click `2_Start_Client.bat` → Register as "Charlie"
-5. Chat between all windows with smooth animations!
-
-**Command Line:**
-```bash
-# Terminal 1
-python server.py
-
-# Terminal 2
-python client.py  # Alice
-
-# Terminal 3
-python client.py  # Bob
-
-# Terminal 4
-python client.py  # Charlie
-```
-
-## Troubleshooting 🔧
-
-**Issue:** "Cannot import name 'PBKDF2'"
-- **Solution:** Already fixed! Make sure you have the latest version of the code.
-
-**Issue:** Usernames showing as "Unknown"
-- **Solution:** Already fixed! Update to the latest version.
-
-**Issue:** App freezes when disconnecting
-- **Solution:** Already fixed! The disconnect is now instant.
-
-**Issue:** Can't open multiple clients
-- **Solution:** Already fixed! Multiple instances now work perfectly.
-
-**Issue:** "python is not recognized"
-- **Solution:** Make sure Python is installed and added to your system PATH.
-
-## License 📄
-
-MIT License - Feel free to use and modify!
+- **"Could not connect to server":** start `server.py` first.
+- **"[message could not be decrypted]":** the client and server are using different keys. Make sure they share the same `chat.key` or `CHAT_KEY`.
+- **Old accounts can't log in:** password hashing changed to scrypt; delete `chat_app.db` and register again.

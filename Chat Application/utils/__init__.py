@@ -1,8 +1,7 @@
 """
-GUI package for chat application
+Shared helpers for the chat server and client.
 """
-from .login_window import LoginWindow
-from .chat_window import ChatWindow
-from .styles import COLORS, LOGIN_STYLE, CHAT_STYLE
+from .encryption import EncryptionHandler
+from .notifications import NotificationManager
 
-__all__ = ['LoginWindow', 'ChatWindow', 'COLORS', 'LOGIN_STYLE', 'CHAT_STYLE']
+__all__ = ['EncryptionHandler', 'NotificationManager']
