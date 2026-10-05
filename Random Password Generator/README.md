@@ -1,39 +1,39 @@
-# 🔐 Advanced Password Generator
+# Advanced Password Generator
 
 **Oasis Infobyte Internship Project**
 
-A sophisticated GUI-based password generator built with Python and Tkinter, featuring advanced customization options, real-time strength analysis, and an intuitive user interface.
+A password generator with a Tkinter GUI. You choose the length and character sets, and it shows a strength rating as you go.
 
-## 🌟 Features
+## Features
 
 ### Core Functionality
-- **Customizable Length**: Generate passwords from 4 to 50 characters
-- **Character Type Selection**: 
+- Customizable Length: Generate passwords from 4 to 50 characters
+- Character Type Selection: 
   - Uppercase letters (A-Z)
   - Lowercase letters (a-z)  
   - Numbers (0-9)
   - Special symbols (!@#$%^&*)
-- **Smart Exclusions**: Option to exclude similar-looking characters (0,O,1,l,I)
+- Smart Exclusions: Option to exclude similar-looking characters (0,O,1,l,I)
 
 ### User Experience
-- **One-Click Copy**: Copy generated passwords to clipboard instantly
-- **Visual Feedback**: Button animations and status confirmations
-- **Password History**: Maintains history of last 10 generated passwords
-- **Quick Presets**: Pre-configured strength levels (Weak, Medium, Strong, Ultra)
+- One-Click Copy: Copy generated passwords to clipboard instantly
+- Visual Feedback: Button animations and status confirmations
+- Password History: Maintains history of last 10 generated passwords
+- Quick Presets: Pre-configured strength levels (Weak, Medium, Strong, Ultra)
 
-### Security Features  
-- **Real-Time Strength Analysis**: Dynamic password strength evaluation
-- **Animated Progress Bar**: Visual representation of password security level
-- **Smart Recommendations**: Tips for improving password strength
-- **Secure Generation**: Uses Python's cryptographically secure random module
+### Security Features
+- Real-Time Strength Analysis: Dynamic password strength evaluation
+- Animated Progress Bar: Visual representation of password security level
+- Smart Recommendations: Tips for improving password strength
+- Secure Generation: Uses Python's cryptographically secure random module
 
 ### Interface Design
-- **Professional Dark Theme**: Modern, eye-friendly color scheme
-- **Responsive Layout**: Clean, organized sections with labeled frames
-- **Clear Typography**: High-contrast text for excellent readability
-- **Intuitive Controls**: Logical grouping and clear button labeling
+- Professional Dark Theme: Modern, eye-friendly color scheme
+- Responsive Layout: Clean, organized sections with labeled frames
+- Clear Typography: High-contrast text for excellent readability
+- Intuitive Controls: Logical grouping and clear button labeling
 
-## 🖥️ Screenshots
+## Screenshots
 
 The application features a professional dark theme interface with:
 - Password length slider at the top
@@ -44,7 +44,7 @@ The application features a professional dark theme interface with:
 - Real-time password strength meter
 - Quick preset buttons for common configurations
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Method 1: Using Batch File (Recommended)
 ```bash
@@ -61,42 +61,42 @@ pip install -r requirements.txt
 python password_generator.py
 ```
 
-## 📋 Requirements
+## Requirements
 
-- **Python**: 3.6 or higher
-- **Operating System**: Windows, macOS, or Linux
-- **Dependencies**: 
+- Python: 3.6 or higher
+- Operating System: Windows, macOS, or Linux
+- Dependencies: 
   - `tkinter` (usually included with Python)
   - `pyperclip` (for clipboard functionality)
 
-## 🎯 Usage Guide
+## Usage Guide
 
 ### Basic Usage
-1. **Set Password Length**: Use the slider to choose desired length (4-50 characters)
-2. **Select Character Types**: Check/uncheck boxes for character categories
-3. **Generate Password**: Click the red "🚀 GENERATE PASSWORD" button
-4. **Copy Password**: Click the green "📋 Copy to Clipboard" button
+1. Set Password Length: Use the slider to choose desired length (4-50 characters)
+2. Select Character Types: Check/uncheck boxes for character categories
+3. Generate Password: Click the red "🚀 GENERATE PASSWORD" button
+4. Copy Password: Click the green "📋 Copy to Clipboard" button
 
 ### Advanced Features
-- **Quick Presets**: Use preset buttons for instant configuration:
-  - **Weak**: 8 chars, letters only
-  - **Medium**: 12 chars, letters + numbers  
-  - **Strong**: 16 chars, letters + numbers + symbols
-  - **Ultra**: 24 chars, all character types
-- **Exclude Similar**: Enable to avoid confusing characters (0,O,1,l,I)
-- **Strength Analysis**: Monitor the colored progress bar and recommendations
+- Quick Presets: Use preset buttons for instant configuration:
+  - Weak: 8 chars, letters only
+  - Medium: 12 chars, letters + numbers  
+  - Strong: 16 chars, letters + numbers + symbols
+  - Ultra: 24 chars, all character types
+- Exclude Similar: Enable to avoid confusing characters (0,O,1,l,I)
+- Strength Analysis: Monitor the colored progress bar and recommendations
 
 ### Keyboard Shortcuts
 - The interface is fully mouse-driven for ease of use
 - All buttons provide visual feedback when clicked
 - Copy function automatically selects the entire password
 
-## 🔧 Technical Details
+## Technical Details
 
 ### Architecture
-- **Framework**: Python Tkinter (cross-platform GUI)
-- **Design Pattern**: Object-oriented with clean separation of concerns
-- **Threading**: Non-blocking UI updates for smooth animations
+- Framework: Python Tkinter (cross-platform GUI)
+- Design Pattern: Object-oriented with clean separation of concerns
+- Threading: Non-blocking UI updates for smooth animations
 
 ### Security Implementation
 - Uses `random.choice()` with cryptographically appropriate randomness
@@ -116,7 +116,7 @@ password_generator.py
 │   └── animate_progress()  # Visual effects
 ```
 
-## 🛠️ Customization
+## Customization
 
 ### Modifying Character Sets
 Edit the character sets in the `generate_password()` method:
@@ -142,7 +142,7 @@ if len(password) >= 8:
     score += 25  # Adjust points for length
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -159,11 +159,11 @@ if len(password) >= 8:
 **Solution**: Ensure system supports Unicode characters
 
 ### System Requirements
-- **Windows**: Windows 7 or later
-- **macOS**: macOS 10.12 or later  
-- **Linux**: Most modern distributions with GUI support
+- Windows: Windows 7 or later
+- macOS: macOS 10.12 or later  
+- Linux: Most modern distributions with GUI support
 
-## 📈 Password Strength Scoring
+## Password Strength Scoring
 
 The strength calculation uses the following criteria:
 
@@ -178,12 +178,12 @@ The strength calculation uses the following criteria:
 | Symbols | 15 | Special characters present |
 
 **Strength Levels**:
-- 🔴 **Weak** (0-49%): Basic protection
-- 🟡 **Medium** (50-69%): Moderate security
-- 🟠 **Strong** (70-84%): Good security
-- 🟢 **Very Strong** (85-100%): Excellent security
+- Weak (0-49%): Basic protection
+- Medium (50-69%): Moderate security
+- Strong (70-84%): Good security
+- Very Strong (85-100%): Excellent security
 
-## 🤝 Contributing
+## Contributing
 
 This project was created as part of the Oasis Infobyte internship program. The code is well-documented and structured for educational purposes.
 
@@ -194,20 +194,16 @@ This project was created as part of the Oasis Infobyte internship program. The c
 4. Make your modifications
 5. Test thoroughly before deployment
 
-## 📄 License
+## License
 
 This project is created for educational purposes as part of the Oasis Infobyte internship program.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- **Oasis Infobyte**: For providing the internship opportunity and project guidelines
-- **Python Community**: For the excellent tkinter and pyperclip libraries
-- **Security Community**: For best practices in password generation
+- Oasis Infobyte: For providing the internship opportunity and project guidelines
+- Python Community: For the excellent tkinter and pyperclip libraries
+- Security Community: For best practices in password generation
 
-## 📞 Contact
+## Contact
 
 Created as part of the Oasis Infobyte internship program.
-
----
-
-**⚡ Ready to generate secure passwords? Run `run.bat` and start protecting your digital life!**

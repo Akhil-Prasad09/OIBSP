@@ -1,20 +1,20 @@
-# Chat Application 💬
+# Chat Application
 
 A multi-client chat app in Python: a multithreaded socket server, a PyQt5 desktop client with animations, SQLite message history, and encrypted message storage.
 
 ## Features
 
-- **Accounts:** register and log in; passwords stored as salted scrypt hashes
-- **Real-time group chat:** a multithreaded TCP server broadcasts each message to everyone in the room
-- **Encrypted storage and broadcast:** the server encrypts each message with Fernet (AES-128-CBC + HMAC-SHA256) before saving it and sending it to clients, which decrypt it locally
-- **Message history:** the last 100 messages load when you log in
-- **Emoji:** picker and `:alias:` shortcodes
-- **Desktop notifications** for new messages and users joining (via plyer, where supported)
-- **Multiple clients at once:** open as many windows as you like
+- Accounts: register and log in. Passwords are stored as salted scrypt hashes.
+- Real-time group chat: a multithreaded TCP server broadcasts each message to everyone in the room.
+- Encrypted storage and broadcast: the server encrypts each message with Fernet (AES-128-CBC + HMAC-SHA256) before saving it and sending it to clients, which decrypt it locally.
+- Message history: the last 100 messages load when you log in.
+- Emoji picker and `:alias:` shortcodes.
+- Desktop notifications for new messages and users joining (via plyer, where supported).
+- You can open as many client windows as you like.
 
-### Security model, precisely
+### Security model
 
-All clients and the server share one key (`chat.key`, created on first run, or the `CHAT_KEY` environment variable). Messages are encrypted at rest in the database and on the way from the server to clients. The server holds the key, so this is **not end-to-end encryption**, and messages travel from client to server unencrypted. The default setup runs everything on `localhost`. To run across machines, put the server behind TLS and copy `chat.key` to each client.
+All clients and the server share one key (`chat.key`, created on first run, or the `CHAT_KEY` environment variable). Messages are encrypted at rest in the database and on the way from the server to clients. The server holds the key, so this is not end-to-end encryption, and messages travel from client to server unencrypted. The default setup runs everything on `localhost`. To run across machines, put the server behind TLS and copy `chat.key` to each client.
 
 ### Not implemented yet
 

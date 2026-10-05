@@ -1,38 +1,38 @@
 # Weather Pro - Professional Weather Application
 
-A full-stack Python weather application with a professional Tkinter GUI that provides real-time weather information and 5-day forecasts for any location worldwide.
+A Python weather app with a Tkinter GUI. It shows current conditions and a 5-day forecast for any location.
 
 **OASIS Infobyte Internship Project**
 
 ---
 
-## 🌟 Features
+## Features
 
 ### Core Features
-- **Real-time Weather Data**: Get current weather conditions for any city or ZIP code
-- **5-Day Forecast**: View detailed weather forecasts for the next 5 days
-- **Professional GUI**: Modern, clean interface built with Tkinter
-- **Unit Conversion**: Toggle between Celsius and Fahrenheit
-- **Detailed Information**: Temperature, humidity, wind speed, pressure, visibility, sunrise/sunset times
+- Real-time Weather Data: Get current weather conditions for any city or ZIP code
+- 5-Day Forecast: View detailed weather forecasts for the next 5 days
+- Professional GUI: Modern, clean interface built with Tkinter
+- Unit Conversion: Toggle between Celsius and Fahrenheit
+- Detailed Information: Temperature, humidity, wind speed, pressure, visibility, sunrise/sunset times
 
 ### Technical Features
-- **API Integration**: Connects to OpenWeatherMap API for accurate weather data
-- **Error Handling**: Comprehensive error handling for network issues, invalid locations, and API errors
-- **Cross-platform**: Works on Windows, macOS, and Linux
-- **Responsive Design**: User-friendly interface with hover effects and visual feedback
+- API Integration: Connects to OpenWeatherMap API for accurate weather data
+- Error Handling: Comprehensive error handling for network issues, invalid locations, and API errors
+- Cross-platform: Works on Windows, macOS, and Linux
+- Responsive Design: User-friendly interface with hover effects and visual feedback
 
 ---
 
-## 📋 Requirements
+## Requirements
 
-- **Python 3.7 or higher**
-- **requests** library (for API calls)
-- **tkinter** (usually comes pre-installed with Python)
-- **OpenWeatherMap API Key** (free tier available)
+- Python 3.7 or higher
+- requests library (for API calls)
+- tkinter (usually comes pre-installed with Python)
+- OpenWeatherMap API Key (free tier available)
 
 ---
 
-## ⚠️ Important: Protecting Your API Key
+## Important: Protecting Your API Key
 
 **NEVER commit your `config.json` file to GitHub or any public repository!**
 
@@ -46,7 +46,7 @@ Users cloning your repo should:
 
 ---
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Step 1: Install Python
 If you don't have Python installed:
@@ -94,7 +94,7 @@ export OPENWEATHER_API_KEY=your_api_key_here
 
 ---
 
-## 💻 Running the Application
+## Running the Application
 
 ### Windows
 Double-click `run_weather_app.bat` or run:
@@ -109,13 +109,13 @@ python3 weather_app.py
 
 ---
 
-## 📖 How to Use
+## How to Use
 
-1. **Launch the Application**: Run the app using one of the methods above
-2. **Enter Location**: Type a city name (e.g., "London", "New York") or ZIP code in the search field
-3. **Select Units**: Choose between Celsius (°C) or Fahrenheit (°F)
-4. **Search**: Click "🔍 Search Weather" or press Enter
-5. **View Results**: 
+1. Launch the Application: Run the app using one of the methods above
+2. Enter Location: Type a city name (e.g., "London", "New York") or ZIP code in the search field
+3. Select Units: Choose between Celsius (°C) or Fahrenheit (°F)
+4. Search: Click "🔍 Search Weather" or press Enter
+5. View Results: 
    - Current weather displays on the left with temperature, conditions, and details
    - 5-day forecast appears at the bottom with daily summaries
 
@@ -126,7 +126,7 @@ python3 weather_app.py
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 Weather App/
@@ -141,29 +141,29 @@ Weather App/
 
 ### File Descriptions
 
-- **weather_app.py**: Contains the `WeatherApp` class with Tkinter GUI implementation
-- **weather_api.py**: Contains the `WeatherAPI` class for handling API requests and data parsing
-- **config.json**: Stores your OpenWeatherMap API key securely
-- **requirements.txt**: Lists all Python package dependencies
-- **run_weather_app.bat**: Automated launcher for Windows users
+- weather_app.py: Contains the `WeatherApp` class with Tkinter GUI implementation
+- weather_api.py: Contains the `WeatherAPI` class for handling API requests and data parsing
+- config.json: Stores your OpenWeatherMap API key securely
+- requirements.txt: Lists all Python package dependencies
+- run_weather_app.bat: Automated launcher for Windows users
 
 ---
 
-## 🎨 GUI Overview
+## GUI Overview
 
 ### Main Components
 
-1. **Header Section**: App title and subtitle
-2. **Search Section**: 
+1. Header Section: App title and subtitle
+2. Search Section: 
    - Location input field
    - Search button with hover effects
    - Unit toggle (Celsius/Fahrenheit)
-3. **Current Weather Section**:
+3. Current Weather Section:
    - Location and date
    - Large temperature display
    - Weather description with emoji
    - Detailed metrics (humidity, wind, pressure, visibility, sunrise/sunset)
-4. **Forecast Section**: 5-day forecast cards with icons and temperature ranges
+4. Forecast Section: 5-day forecast cards with icons and temperature ranges
 
 ### Color Scheme
 - Background: Dark blue theme (#1a1a2e)
@@ -174,36 +174,36 @@ Weather App/
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
 **Problem**: "API key not found" error
-- **Solution**: Make sure your `config.json` file exists and contains your valid API key
+- Solution: Make sure your `config.json` file exists and contains your valid API key
 
 **Problem**: "Location not found" error
-- **Solution**: Check the spelling of your city name. Try adding the country code (e.g., "Springfield,US")
+- Solution: Check the spelling of your city name. Try adding the country code (e.g., "Springfield,US")
 
 **Problem**: "Connection error"
-- **Solution**: Check your internet connection. Make sure you're not behind a restrictive firewall
+- Solution: Check your internet connection. Make sure you're not behind a restrictive firewall
 
 **Problem**: "Invalid API key"
-- **Solution**: Verify your API key is correct and has been activated (can take 10-15 minutes after signup)
+- Solution: Verify your API key is correct and has been activated (can take 10-15 minutes after signup)
 
 **Problem**: App window is blank or frozen
-- **Solution**: Check your Python version (3.7+) and ensure tkinter is installed
+- Solution: Check your Python version (3.7+) and ensure tkinter is installed
 
 **Problem**: "Module not found: requests"
-- **Solution**: Run `pip install requests` or `pip install -r requirements.txt`
+- Solution: Run `pip install requests` or `pip install -r requirements.txt`
 
 ---
 
-## 📊 API Information
+## API Information
 
 This application uses the **OpenWeatherMap API**:
 
-- **Current Weather API**: `/data/2.5/weather`
-- **5-Day Forecast API**: `/data/2.5/forecast`
+- Current Weather API: `/data/2.5/weather`
+- 5-Day Forecast API: `/data/2.5/forecast`
 
 ### Free Tier Limits
 - 60 calls/minute
@@ -215,7 +215,7 @@ For more information, visit [OpenWeatherMap API Documentation](https://openweath
 
 ---
 
-## 🎯 Key Concepts Implemented
+## Key Concepts Implemented
 
 ### API Integration
 - REST API calls using `requests` library
@@ -255,7 +255,7 @@ For more information, visit [OpenWeatherMap API Documentation](https://openweath
 
 ---
 
-## 🌐 Future Enhancements (Optional)
+## Future Enhancements (Optional)
 
 - GPS/IP-based automatic location detection
 - Hourly forecast view
@@ -268,7 +268,7 @@ For more information, visit [OpenWeatherMap API Documentation](https://openweath
 
 ---
 
-## 📝 Assignment Requirements Checklist
+## Assignment Requirements Checklist
 
 ✅ **API Integration**: Connected to OpenWeatherMap API with proper JSON parsing
 
@@ -291,13 +291,13 @@ For more information, visit [OpenWeatherMap API Documentation](https://openweath
 
 ---
 
-## 📄 License
+## License
 
 This project is created for educational purposes as part of the OASIS Infobyte internship program.
 
 ---
 
-## 🙋 Support
+## Support
 
 If you encounter any issues:
 
@@ -308,13 +308,13 @@ If you encounter any issues:
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 Created as part of OASIS Infobyte Web Development Internship
 
 ---
 
-## 🎓 Learning Outcomes
+## Learning Outcomes
 
 By completing this project, you will have learned:
 
@@ -326,7 +326,3 @@ By completing this project, you will have learned:
 - Creating user-friendly interfaces
 - Working with datetime and timezone conversions
 - Project structure and modular programming
-
----
-
-**Enjoy using Weather Pro! ☀️🌧️❄️**
