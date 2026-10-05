@@ -1,6 +1,6 @@
 # OIBSP: Oasis Infobyte Python internship
 
-Five Python applications built during my 2024 software development internship at Oasis Infobyte. Each was specified, built and demoed on its own.
+Five Python applications built during my software development internship (Oct to Nov 2025) at Oasis Infobyte. Each was specified, built and demoed on its own.
 
 | App | What it does |
 |---|---|

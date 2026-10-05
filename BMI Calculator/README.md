@@ -44,8 +44,8 @@ A BMI (Body Mass Index) calculator built with Python and Tkinter. It categorizes
 ### Windows Users (Recommended)
 1. Download the Repository
    ```bash
-   git clone https://github.com/yourusername/bmi-calculator-pro.git
-   cd bmi-calculator-pro
+   git clone https://github.com/Akhil-Prasad09/OIBSP.git
+   cd "OIBSP/BMI Calculator"
    ```
 
 2. Run with Batch File
@@ -67,8 +67,8 @@ A BMI (Body Mass Index) calculator built with Python and Tkinter. It categorizes
 #### Installation Steps
 1. Clone the Repository
    ```bash
-   git clone https://github.com/yourusername/bmi-calculator-pro.git
-   cd bmi-calculator-pro
+   git clone https://github.com/Akhil-Prasad09/OIBSP.git
+   cd "OIBSP/BMI Calculator"
    ```
 
 2. Install Dependencies
@@ -239,7 +239,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 ## Authors
 
-- Your Name - *Initial work* - [YourUsername](https://github.com/yourusername)
+- Akhil Prasad Chinthala ([Akhil-Prasad09](https://github.com/Akhil-Prasad09)), built during the Oasis Infobyte internship
 
 ## Acknowledgments
 
@@ -248,17 +248,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 - Matplotlib Team for powerful visualization capabilities
 - Contributors who help improve this project
 
-## Statistics
-
-- Lines of Code: ~1,500+
-- Functions: 50+
-- Classes: 2 main classes
-- Features: 15+ major features
-- Supported Platforms: Windows, macOS, Linux
 
 ## Links
 
-- Documentation: [Wiki](../../wiki)
-- Bug Reports: [Issues](../../issues)
-- Feature Requests: [Discussions](../../discussions)
-- Contact: [your.email@example.com](mailto:your.email@example.com)
+- Bug reports: [Issues](https://github.com/Akhil-Prasad09/OIBSP/issues)
